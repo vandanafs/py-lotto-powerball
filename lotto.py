@@ -10,27 +10,32 @@ def pick_lotto():
 # start with an empty result
   v=[]
   for j in range(maxj):
-        # get ith number from r...       
-	  i=randint(1,m)
-   	  n=r[i]
-	# remove it from r...
- 	  r[i:i+1]=[]
-          m=m-1
-	# and append to the result
-	  v.append(n)
-  return v
+	  # get ith number from r...
+	  i = randint(1, m)
+	  n = r[i]
+	  # remove it from r...
+	  r[i:i + 1] = []
+	  m = m - 1
+  # and append to the result
+  v.append(n)
+
+
+
+
 
 def run():
 	done=0
 	while not done:
-	  try: x = input('\npress Enter for Lotto picks (Q to quit). ')
+	  try:
+		  x = input('\npress Enter for Lotto picks (Q to quit). ')
 	  except EOFError:
-		x = 'q'
+		  x = 'q'
 	  if x and (x[0] == 'q' or x[0] == 'Q'):
 	        done=1
 	        print('done')
 	  else:
 	        print(pick_lotto())
+
 
 # immediate-mode commands, for drag-and-drop or execfile() execution
 if __name__ == '__main__':
